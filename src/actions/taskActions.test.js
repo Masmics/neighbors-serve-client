@@ -1,7 +1,10 @@
-import { newTask }  from './taskActions';
+import { newTask, fetchTasks }  from './taskActions';
 
 jest.mock('../services/tasksApi.js', () => ({
   createTask() {
+    return Promise.resolve([]);
+  },
+  getTasks() {
     return Promise.resolve([]);
   }
 }));
@@ -17,6 +20,18 @@ describe('taskActions', () => {
       pendingType: 'NEW_TASK_PENDING',
       fulfilledType: 'NEW_TASK_FULFILLED',
       rejectedType: 'NEW_TASK_REJECTED',
+      payload: expect.any(Promise)
+    });
+  });
+
+  it('facilitates a get-task-list action', () => {
+    const taskAction = fetchTasks();
+
+    expect(taskAction).toEqual({
+      type: 'FETCH_TASKS',
+      pendingType: 'FETCH_TASKS_PENDING',
+      fulfilledType: 'FETCH_TASKS_FULFILLED',
+      rejectedType: 'FETCH_TASKS_REJECTED',
       payload: expect.any(Promise)
     });
   });

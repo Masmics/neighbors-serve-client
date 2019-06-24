@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { createTask } from '../services/tasksApi';
+import { createTask, getTasks } from '../services/tasksApi';
 
 export const [
   newTask,
@@ -7,3 +7,9 @@ export const [
   NEW_TASK_PENDING
   
 ] = createAction('NEW_TASK', createTask);
+
+export const [
+  fetchTasks,
+  FETCH_TASKS,
+  FETCH_TASKS_PENDING
+] = createAction('FETCH_TASKS', getTasks);

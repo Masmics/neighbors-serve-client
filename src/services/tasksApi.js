@@ -1,4 +1,5 @@
-import { post } from './request';
+import { post, get } from './request';
 
 export const createTask = task => post('/api/v1/tasks', task);
+export const getTasks = () => get('/api/v1/tasks');
 
