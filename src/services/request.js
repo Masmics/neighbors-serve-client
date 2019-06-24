@@ -1,5 +1,4 @@
 const request = (path, method, body) => {
-  // console.log(path, method);
   // eslint-disable-next-line no-undef
   return fetch(`${process.env.API_URL}${path}`, {
     method,
