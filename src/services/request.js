@@ -7,7 +7,7 @@ const request = (path, method, body = {}) => {
   })
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
-      if(!ok) throw `unable to fetch ${path}`;
+      if(!ok) throw `Unable to fetch ${path}`;
       return json;
     });
 };
