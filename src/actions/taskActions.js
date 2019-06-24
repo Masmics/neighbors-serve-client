@@ -7,4 +7,3 @@ export const [
   NEW_TASK_PENDING
   
 ] = createAction('NEW_TASK', createTask);
-
