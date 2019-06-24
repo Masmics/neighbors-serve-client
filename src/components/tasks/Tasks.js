@@ -24,3 +24,4 @@ Tasks.propTypes = {
 };
 
 export default Tasks;
+
