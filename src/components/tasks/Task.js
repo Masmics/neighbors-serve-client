@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Task({ task }) {
   return (
-    <p>{task.title}{task.description}</p>
+    <p>{task.title}:  {task.description}</p>
   );
 }
 

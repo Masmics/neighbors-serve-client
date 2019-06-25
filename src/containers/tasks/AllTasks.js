@@ -25,16 +25,18 @@ class AllTasks extends PureComponent {
   }
 }
 
+const mapStateToProps = state => ({
+  tasks: getTasks(state),
+  loading: getTasksLoading(state)
+});
+
 const mapDispatchToProps = dispatch => ({
   fetch() {
     dispatch(fetchTasks());
   }
 });
 
-const mapStateToProps = state => ({
-  tasks: getTasks(state),
-  loading: getTasksLoading(state)
-});
+
 
 export default connect(
   mapStateToProps,
