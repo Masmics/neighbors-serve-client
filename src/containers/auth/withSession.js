@@ -17,8 +17,8 @@ export const withSession = Component => {
       }
     }
     render() {
-      // only render if logged in, else just error message
-      if(!this.props.token) return <h1>Please login/signup</h1>;
+      // only render if logged in, else just error
+      if(!this.props.token) return <h1></h1>;
       return <Component />;
     }
   }

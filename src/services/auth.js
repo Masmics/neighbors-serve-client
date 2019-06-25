@@ -1,30 +1,36 @@
 import { WebAuth } from 'auth0-js';
 
 const auth0 = new WebAuth({
-  domain: 'cherlocker.auth0.com',
-  clientID: '7AIfPmzhTH69egxAOtpI9SDGsaWdU3n0',
+  domain: process.env.AUTH0_DOMAIN,
+  clientID: process.env.AUTH0_CLIENT_ID,
   // where do we send them after login?
-  redirectUri: 'http://localhost:7890/callback',
+  redirectUri: process.env.AUTH0_CALLBACK,
   // what type of response do we want back?
   responseType: 'token id_token',
   scope: 'openid profile'
 });
 
-// is user isn't logged in send to auth0 login or signup
+// if user isn't logged in send to auth0 login or signup
 export const login = () => {
   auth0.authorize();
 };
 
 // have result, access token & id token before moving on
 export const handleAuth = () => { 
+  // auth0 still uses callbacks - turn it into new promise w/ resolve + reject
   return new Promise((resolve, reject) => {
+    // parseHash takes callback (error, results) - parse url from browser bar
     auth0.parseHash((error, results) => {
       if(results && results.accessToken && results.idToken) {
+        // if correct result, grab user profile
         auth0.client.userInfo(results.accessToken, (err, profile) => {
           if(err) return reject('Could not retrieve user profile');
           resolve({
+            // profile.name/picture are auth0-defined,  your-user profile fields
+            // view fields using just "resolve(profile);"
             username: profile.name,
-            token: results.accessToken
+            token: results.accessToken,
+            image: profile.picture
           });
         });
       } else {
