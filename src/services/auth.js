@@ -16,7 +16,7 @@ export const login = () => {
 };
 
 // have result, access token & id token before moving on
-export const handleAuth = () => { 
+export const handleAuth = () => {
   // auth0 still uses callbacks - turn it into new promise w/ resolve + reject
   return new Promise((resolve, reject) => {
     // parseHash takes callback (error, results) - parse url from browser bar
@@ -24,12 +24,13 @@ export const handleAuth = () => {
       if(results && results.accessToken && results.idToken) {
         // if correct result, grab user profile
         auth0.client.userInfo(results.accessToken, (err, profile) => {
-          if(err) return reject('Could not retrieve user profile');
+          if(err) return reject('Could not get user profile');
           resolve({
             // profile.name/picture are auth0-defined,  your-user profile fields
             // view fields using just "resolve(profile);"
             username: profile.name,
-            token: results.accessToken,
+            // change to idToken, it's stored in redux
+            token: results.idToken,
             image: profile.picture
           });
         });

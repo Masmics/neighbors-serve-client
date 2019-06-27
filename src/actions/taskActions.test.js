@@ -1,5 +1,5 @@
 import { newTask, fetchTasks }  from './taskActions';
-
+// mock to replace dependencies for local testing
 jest.mock('../services/tasksApi.js', () => ({
   createTask() {
     return Promise.resolve([]);
@@ -13,7 +13,7 @@ describe('taskActions', () => {
   it('facilitates an add-task action', () => {
     const taskAction = newTask({
       title: 'my task',
-      description: 'help me fill a pothole!'
+      description: 'help me fill a pothole!',
     });
     expect(taskAction).toEqual({
       type: 'NEW_TASK',

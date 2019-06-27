@@ -1,14 +1,23 @@
+import store from '../store';
+import { getToken } from '../selectors/sessionSelector';
+
 const request = (path, method, body) => {
   // eslint-disable-next-line no-undef
   return fetch(`${process.env.API_URL}${path}`, {
     method,
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      // requires all routes below to bear a valid user token
+      // although backend only checks in routes w/ ensureAuth()
+      Authorization: `Bearer ${getToken(store.getState())}`
+    },
     // if there's a body, stringify it
     body: body ? JSON.stringify(body) : null
   })
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
-      if(!ok) throw `Unable to fetch ${path}`;
+      if(!ok) throw `unable to fetch ${path}`;
+
       return json;
     });
 };

@@ -17,6 +17,13 @@ class AllTasks extends PureComponent {
     this.props.fetch();
   }
 
+  componentDidUpdate(previousProps) {
+    // if # of tasks changes, re-fetch whole list
+    if(this.props.tasks.length !== previousProps.tasks.length) {
+      this.props.fetch();
+    }
+  }
+
   render() {
     // get loading, tasks from this.props
     const { loading, tasks } = this.props;

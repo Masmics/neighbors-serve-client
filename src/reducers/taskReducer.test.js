@@ -1,6 +1,15 @@
 import reducer from './taskReducer';
 import { NEW_TASK_PENDING, NEW_TASK, FETCH_TASKS_PENDING, FETCH_TASKS } from '../actions/taskActions';
 
+jest.mock('../services/tasksApi.js', () => ({
+  createTask() {
+    return Promise.resolve([]);
+  },
+  getTasks() {
+    return Promise.resolve([]);
+  }
+}));
+
 describe('task reducer', () => {
   it('handles the NEW_TASK_PENDING action', () => {
     const initialState = {
