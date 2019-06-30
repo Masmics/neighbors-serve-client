@@ -7,7 +7,7 @@ const auth0 = new WebAuth({
   redirectUri: process.env.AUTH0_CALLBACK,
   // what type of response do we want back?
   responseType: 'token id_token',
-  scope: 'openid profile'
+  scope: 'openid profile read:users'
 });
 
 // if user isn't logged in send to auth0 login or signup
@@ -28,6 +28,7 @@ export const handleAuth = () => {
           resolve({
             // profile.name/picture are auth0-defined,  your-user profile fields
             // view fields using just "resolve(profile);"
+            id: profile.sub,
             username: profile.name,
             // change to idToken, it's stored in redux
             token: results.idToken,

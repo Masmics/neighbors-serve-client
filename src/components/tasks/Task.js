@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 function Task({ task }) {
   return (
     // now a Task is an active link in Tasks list
-    <Link to={`/${task._id}`}>{task.title} : {task.description}</Link>
+    <Link to={`/${task._id}`}>{task.title} : {task.creator.name}</Link>
+    // <Link to={`/${task._id}`}>{task.title} : {task.description}</Link>
   );
 }
 
@@ -14,9 +15,12 @@ Task.propTypes = {
     _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    // creator: PropTypes.shape({
-    //   email: PropTypes.string.isrequired
-    // })
+    creator: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired
+    })//.isRequired //?
   }).isRequired
 };
 
