@@ -28,18 +28,6 @@ exports[`App component renders App 1`] = `
       }
       path="/callback"
     />
-    <Route
-      component={
-        Object {
-          "$$typeof": Symbol(react.memo),
-          "WrappedComponent": [Function],
-          "compare": null,
-          "displayName": "Connect(WithSession)",
-          "type": [Function],
-        }
-      }
-      path="/:id"
-    />
   </Switch>
 </BrowserRouter>
 `;

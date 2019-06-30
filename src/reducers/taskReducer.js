@@ -1,8 +1,4 @@
-import { 
-  NEW_TASK_PENDING, 
-  NEW_TASK, 
-  FETCH_TASKS_PENDING, 
-  FETCH_TASKS } from '../actions/taskActions';
+import { NEW_TASK_PENDING, NEW_TASK, FETCH_TASKS_PENDING, FETCH_TASKS } from '../actions/taskActions';
 
 const initialState = {
   loading: false,

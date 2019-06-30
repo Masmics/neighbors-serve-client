@@ -1,12 +1,6 @@
 import reducer from './taskReducer';
-import { 
-  NEW_TASK_PENDING, 
-  NEW_TASK, 
-  FETCH_TASKS_PENDING, 
-  FETCH_TASKS } from '../actions/taskActions';
+import { NEW_TASK_PENDING, NEW_TASK, FETCH_TASKS_PENDING, FETCH_TASKS } from '../actions/taskActions';
 
-jest.mock('../services/auth.js');
-// mocking the service rather than importing it to prevent circular dependencies
 jest.mock('../services/tasksApi.js', () => ({
   createTask() {
     return Promise.resolve([]);

@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 function Task({ task }) {
   return (
-    // now a Task is an active link in Tasks list
-    <Link to={`/${task._id}`}>{task.title} : {task.description}</Link>
+    <p>{task.title} : {task.description}</p>
   );
 }
 
