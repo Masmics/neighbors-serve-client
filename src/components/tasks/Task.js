@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Task({ task }) {
   return (
-    <Link to={`/${task._id}`}>{task.title} : {task.description}</Link>
+    <Link to={`/${task._id}`}>{task.title}: {task.description}</Link>
 
   // <p>{task.title}: {task.description}</p>
   );
