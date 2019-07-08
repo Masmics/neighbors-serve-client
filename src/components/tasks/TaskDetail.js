@@ -11,6 +11,14 @@ function TaskDetail({ task }) {
      <p>{description}</p>
    </>
   );
+
+  // const showTask = (
+  //   <>
+  //     <h2>{title}</h2>
+  //     <p>{description}</p>
+  //   </>
+  // );
+  // return showTask;
 }
 TaskDetail.propTypes = {
   task: PropTypes.shape({

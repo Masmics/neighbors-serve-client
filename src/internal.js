@@ -1,4 +1,4 @@
-// import { getTasks, createTask } from './actions/taskActions';
+import { getTasks, createTask, NEW_TASK_PENDING, NEW_TASK, FETCH_TASKS_PENDING, FETCH_TASKS } from './actions/taskActions';
 // import { getTask } from './actions/taskDetailActions';
 
 // import { tasksApi } from './services/tasksApi';
@@ -8,4 +8,20 @@
 // import tasks from './reducers/taskReducer';
 // import task from './reducers/taskDetailReducer';
 
-// export const { getTasks, createTask};
+return {
+  getTasks, 
+  createTask, 
+  NEW_TASK_PENDING, 
+  NEW_TASK, 
+  FETCH_TASKS_PENDING, 
+  FETCH_TASKS 
+};
+
+export { getTasks, createTask, NEW_TASK_PENDING, NEW_TASK, FETCH_TASKS_PENDING, FETCH_TASKS } from './actions/taskActions';
+// export { getTask };
+// export { tasksApi };
+
+// export { store };
+// export { reducer };
+// export { task };
+// export { tasks };

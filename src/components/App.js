@@ -16,7 +16,8 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={withSession(Home)} />
         <Route path="/callback" component={Callback} />
-        <Route path="/:id" component={withSession(TaskById)} />
+        {/* <Route path="/:id" component={withSession(TaskById)} /> */}
+        <Route path="/:id" component={TaskById} />
       </Switch>
     </Router>
   );

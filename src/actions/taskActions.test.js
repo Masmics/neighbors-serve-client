@@ -1,4 +1,5 @@
 import { newTask, fetchTasks }  from './taskActions';
+// import { newTask, fetchTasks }  from '../internal';
 // mock to replace dependencies for local testing
 jest.mock('../services/tasksApi.js', () => ({
   createTask() {

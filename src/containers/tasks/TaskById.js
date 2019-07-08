@@ -10,10 +10,12 @@ import { getTaskDetail, getTaskDetailLoading } from '../../selectors/taskDetailS
 class TaskById extends PureComponent {
   static propTypes = {
     task: PropTypes.shape({
+      // id: PropTypes.number,
       title: PropTypes.string,
       description: PropTypes.string
     }),
     fetch: PropTypes.func.isRequired,
+    // loading: PropTypes.bool
     loading: PropTypes.bool.isRequired 
   }
 
@@ -26,6 +28,12 @@ class TaskById extends PureComponent {
     if(loading) return <h2>Loading...</h2>;
     return <TaskDetail task={task} />;
   }
+
+  // render() {
+  //   const { task } = this.props;
+  //   if(loading) return <h2>Loading...</h2>;
+  //   return <TaskDetail task={task} />;
+  // }
 }
 
 const mapStateToProps = state => ({
@@ -44,3 +52,8 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(TaskById));
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(TaskById);
