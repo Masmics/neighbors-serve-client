@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Task({ task }) {
   return (
-    <Link to={`/${task._id}`}>{task.title}: {task.description}</Link>
-
-  // <p>{task.title}: {task.description}</p>
+    <Link to={`/${task._id}`}>{task.title} (by {task.author.email}</Link>
   );
 }
 
@@ -15,9 +13,12 @@ Task.propTypes = {
     _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    // creator: PropTypes.shape({
-    //   email: PropTypes.string.isrequired
-    // })
+    author: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired
+    })
   }).isRequired
 };
 

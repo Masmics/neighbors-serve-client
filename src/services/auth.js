@@ -26,6 +26,7 @@ export const handleAuth = () => {
         auth0.client.userInfo(results.accessToken, (err, profile) => {
           if(err) return reject('Could not get user profile');
           resolve({
+            id: profile.sub,
             // profile.name/picture are auth0-defined,  your-user profile fields
             // view fields using just "resolve(profile);"
             username: profile.name,

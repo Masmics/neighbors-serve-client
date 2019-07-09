@@ -13,7 +13,7 @@ class Callback extends PureComponent {
   }
   
   render() {
-    return <h2></h2>;
+    return <h4></h4>;
   }
 }
 
