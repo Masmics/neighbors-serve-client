@@ -31,12 +31,6 @@ class TaskById extends PureComponent {
     if(loading) return <h2>Loading...</h2>;
     return <TaskDetail owned={owned} task={task} />;
   }
-
-  // render() {
-  //   const { task } = this.props;
-  //   // if(loading) return <h2>Loading...</h2>;
-  //   return <TaskDetail task={task} />;
-  // }
 }
 
 const mapStateToProps = state => ({
@@ -48,7 +42,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, { match }) => ({
   fetch() {
     dispatch(fetchTaskDetail(match.params.id));
-    // dispatch(fetchTaskDetail({ ...task, _id: match.params.id }));
   }
 });
 

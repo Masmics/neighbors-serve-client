@@ -13,7 +13,6 @@ export const getTaskDetailOwnedBySession = state => {
   return getTaskDetailOwnerId(state) === getSessionId(state);
 };
 
-
 // export const getTaskDetailState = state => state.task.taskDetail;
 // export const getTaskDetail = state => getTaskDetailState(state).task.detail;
 
