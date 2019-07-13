@@ -9,8 +9,6 @@ const request = (path, method, body) => {
     // mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json',
-      // 'Access-Control-Allow-Origin': 'no-cors',
-      // 'Accept': 'application/json',
       // requires all routes below to bear a valid user token
       // although backend only checks in routes w/ ensureAuth()
       Authorization: `Bearer ${getToken(store.getState())}`

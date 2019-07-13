@@ -17,16 +17,15 @@ class CreateTask extends PureComponent {
     event.preventDefault();
     const { title, description } = this.state;
     this.props.createTask({ title, description });
-    
     // clears form after submission
     this.setState({ title: '', description: '' });
   }
 
+  // set the name to this value
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   }
-  // set the name to this value
-
+  
   render() {
     const { title, description } = this.state;
     return (

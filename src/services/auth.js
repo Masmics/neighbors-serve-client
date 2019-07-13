@@ -7,7 +7,7 @@ const auth0 = new WebAuth({
   redirectUri: process.env.AUTH0_CALLBACK,
   // what type of response do we want back?
   responseType: 'token id_token',
-  scope: 'openid profile' //users_id p_token'
+  scope: 'openid profile'
 });
 
 // if user isn't logged in send to auth0 login or signup
@@ -26,7 +26,6 @@ export const handleAuth = () => {
         auth0.client.userInfo(results.accessToken, (err, profile) => {
           if(err) return reject('Could not get user profile');
           resolve({
-            // id: profile.user_id,
             id: profile.sub, // //sub = user_id on backend
             // profile.name/picture are auth0-defined,  your-user profile fields
             // view fields using just "resolve(profile);"

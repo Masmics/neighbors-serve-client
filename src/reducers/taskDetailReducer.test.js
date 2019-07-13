@@ -3,6 +3,7 @@ import { FETCH_TASK_DETAIL_LOADING, FETCH_TASK_DETAIL } from '../actions/taskDet
 
 jest.mock('../services/tasksApi.js', () => ({
   getTask() {
+    // return Promise.resolve([]);
     return Promise.resolve([]);
   }
 }));
@@ -11,7 +12,8 @@ describe('task detail reducer', () => {
   it('handles the FETCH_TASK_DETAIL_LOADING action', () => {
     const initialState = {
       loading: false,
-      list: []
+      detail: {}
+      // list: []
       // or task: {}
     };
 
@@ -21,7 +23,7 @@ describe('task detail reducer', () => {
 
     expect(newState).toEqual({
       loading: true,
-      list: []
+      detail: {}
     });
   });
 
@@ -39,7 +41,10 @@ describe('task detail reducer', () => {
     });
     expect(newState).toEqual({
       loading: false,
-      detail: { title: 'I am a fetched task title', description: 'I am a fetched task content' }
+      detail: { 
+        title: 'I am a fetched task title', 
+        description: 'I am a fetched task content' 
+      }
     });
   });
 });
