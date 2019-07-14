@@ -2,7 +2,7 @@ import { newTask, fetchTasks }  from './taskActions';
 // mock to replace dependencies for local testing
 jest.mock('../services/tasksApi.js', () => ({
   createTask() {
-    return Promise.resolve([]);
+    return Promise.resolve([]); // ({})?
   },
   getTasks() {
     return Promise.resolve([]);
@@ -17,7 +17,7 @@ describe('taskActions', () => {
     });
     expect(taskAction).toEqual({
       type: 'NEW_TASK',
-      pendingType: 'NEW_TASK_PENDING',
+      pendingType: 'NEW_TASK_PENDING', //
       fulfilledType: 'NEW_TASK_FULFILLED',
       rejectedType: 'NEW_TASK_REJECTED',
       payload: expect.any(Promise)

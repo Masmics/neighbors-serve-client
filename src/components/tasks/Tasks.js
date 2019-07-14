@@ -8,6 +8,7 @@ function Tasks({ tasks }) {
       <Task task={task} />
     </li>
   ));
+
   return (
     <ul>
       {taskList}
@@ -19,12 +20,14 @@ Tasks.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired//,
-    // creator: PropTypes.shape({
-    //   id: PropTypes.string.isRequired,
-    //   email: PropTypes.string.isRequired
-
+    description: PropTypes.string.isRequired,
+    author: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired
     // })
+    }).isRequired
   })).isRequired
 };
 
