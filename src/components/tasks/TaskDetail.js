@@ -30,19 +30,10 @@ TaskDetail.propTypes = {
     description: PropTypes.string.isRequired,
     author: PropTypes.shape({
       email: PropTypes.string.isRequired
-    //  })
     }).isRequired
   }).isRequired
 };
 
 export default TaskDetail;
-
-// console.log('save for later', owned);
-// return (
-//   <>
-//     <h2>{title}</h2>
-//     <p>{description}</p>
-//   </>
-// );
-// console.log('save', { author });
+// export { TaskDetail, task }
 

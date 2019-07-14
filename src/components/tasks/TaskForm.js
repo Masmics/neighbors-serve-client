@@ -15,6 +15,9 @@ TaskForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  author: PropTypes.shape({
+    email: PropTypes.string
+  }),
   submitText: PropTypes.string
 };
 

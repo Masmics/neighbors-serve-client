@@ -8,6 +8,7 @@ function Tasks({ tasks }) {
       <Task task={task} />
     </li>
   ));
+
   return (
     <ul>
       {taskList}

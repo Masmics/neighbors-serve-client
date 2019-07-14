@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import TaskForm from '../../components/tasks/TaskForm';
 import { updateTaskDetail } from '../../actions/taskDetailActions';
 import { getTaskDetailTitle, getTaskDetailDescription } from '../../selectors/taskDetailSelector';
@@ -19,7 +19,7 @@ class EditTask extends PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ title: this.props.title, description: this.props.description });
+    this.setState({ title: this.props.title, description: this.props.description }); //, author: this.props.author.email });
   }
 
   handleSubmit = event => {
@@ -34,8 +34,11 @@ class EditTask extends PureComponent {
   }
 
   render() {
-    const { title, description } = this.state;
+    const { title, description } = this.state;//, author } = this.state;
     return (
+      <>
+      <Link to={'/'}>Home</Link>
+      <p></p>
       <TaskForm
         onSubmit={this.handleSubmit}
         onChange={this.handleChange}
@@ -43,6 +46,7 @@ class EditTask extends PureComponent {
         description={description}
         submitText="Edit Task"
       />
+      </>
     );
   }
 }

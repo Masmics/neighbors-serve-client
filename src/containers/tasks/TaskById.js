@@ -29,7 +29,12 @@ class TaskById extends PureComponent {
   render() {
     const { loading, task, owned } = this.props;
     if(loading) return <h2>Loading...</h2>;
-    return <TaskDetail owned={owned} task={task} />;
+    return (
+      <>
+      <div></div>
+      <TaskDetail owned={owned} task={task} />
+      </>
+    );
   }
 }
 

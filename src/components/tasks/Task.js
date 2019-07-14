@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function Task({ task }) {
   return (
     <Link to={`/${task._id}`}>{task.title}, (by {task.author.email})</Link> // by: anon</Link>
-  //  (tested task.author)
   );
 }
 
