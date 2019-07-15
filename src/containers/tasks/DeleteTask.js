@@ -16,22 +16,22 @@ class DeleteTask extends PureComponent {
     task: ''
   }
 
-  // componentDidMount() {
+  // componentDidMount() { // makes delete not work
   //   this.props;
   // }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { task } = this.state;
+    const { task } = this.state.task; // WAS this.props (no chg, wks)
     this.props.removeTask({ task });
     this.setState({ task: '' }); 
   }
 
   render() {
-    const { task } = this.props; // w/o .tasks, loads
-    return (
+    const { task } = this.state.task; // w/o .tasks, no chg
+    return (                         // as long as 25 is this.state
       <>
-      <p3>Delete Task {task}?</p3>
+      <h3>Delete Task {task}?</h3>
       <TaskDeleter
         onSubmit={this.handleSubmit}
         submitText="Delete Task"
