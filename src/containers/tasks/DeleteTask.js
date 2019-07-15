@@ -1,53 +1,58 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// import { Redirect } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { delTask } from '../../actions/taskActions';
 import TaskDeleter from '../../components/tasks/TaskDeleter';
 
-// create wrapper
 class DeleteTask extends PureComponent {
   static propTypes = {
-    task: PropTypes.object.isRequired,
+    // task: PropTypes.object.isRequired,
+    task: PropTypes.object,
+    // title: PropTypes.string.isRequired,
     removeTask: PropTypes.func.isRequired
   }
 
   state = {
     task: ''
+    // title: ''
   }
-
-  // componentDidMount() { // makes delete not work
-  //   this.props;
-  // }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { task } = this.state.task; // WAS this.props (no chg, wks)
+    const { task } = this.state.task;
+    // const { title } = this.state.title;
     this.props.removeTask({ task });
-    this.setState({ task: '' }); 
+    // this.props.removeTask({ title });
+    this.setState({ task: '' });
+    // this.setState({ title });
+    // <Redirect to={'/'} />;
   }
 
   render() {
-    const { task } = this.state.task; // w/o .tasks, no chg
-    return (                         // as long as 25 is this.state
+    const { task } = this.state.task;
+    return (                         
       <>
       <h3>Delete Task {task}?</h3>
       <TaskDeleter
         onSubmit={this.handleSubmit}
+        task={task}
         submitText="Delete Task"
       />
+
       </>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch, { match }) => ({
-  removeTask(task) {
-    dispatch(delTask(match.params.id, task));
-  }
+  removeTask() {
+    dispatch(delTask(match.params.id));
+  }    //(task, (_id: match.params.id)));            
 });
 
 export default withRouter(connect(
-  // mapStateToProps,
+  null,
   mapDispatchToProps
 )(DeleteTask));

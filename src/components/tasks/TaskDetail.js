@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import EditTask from '../../containers/tasks/EditTask';
 import DeleteTask from '../../containers/tasks/DeleteTask';
 
-
 function TaskDetail({ task, owned }) {  //}, owned  }) {
   const {
     title,
@@ -46,6 +45,8 @@ TaskDetail.propTypes = {
   }).isRequired
 };
 
+// const task = TaskDetail.task; // <-- new
+
 export default TaskDetail;
-// export { TaskDetail, task }
+// export { TaskDetail, task }; // <-- new
 
