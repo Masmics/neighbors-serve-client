@@ -2,7 +2,10 @@ import {
   NEW_TASK_PENDING, 
   NEW_TASK, 
   FETCH_TASKS_PENDING, 
-  FETCH_TASKS } from '../actions/taskActions';
+  FETCH_TASKS, 
+  DELETE_TASK_PENDING,
+  DELETE_TASK
+} from '../actions/taskActions';
 
 const initialState = {
   loading: false,
@@ -21,6 +24,10 @@ export default function reducer(state = initialState, action) {
     // returns the list
     case FETCH_TASKS:
       return { ...state, loading: false, list: action.payload };
+    case DELETE_TASK_PENDING:
+      return { ...state, loading: true };
+    case DELETE_TASK:
+      return { ...state, loading: false, list: [...state.list] };
     default:
       return state;
   }

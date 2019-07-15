@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import EditTask from '../../containers/tasks/EditTask';
+import DeleteTask from '../../containers/tasks/DeleteTask';
+
 
 function TaskDetail({ task, owned }) {  //}, owned  }) {
   const {
@@ -12,13 +15,22 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
   const compare = !owned ?
     (
       <>
+        <Link to={'/'}>Home</Link>
         <h2>{title}</h2>
         <h4>{author.email}</h4>
         <p>{description}</p>
       </>
     ) :
     (
+      <>
+      <Link to={'/'}>Home</Link>
+      <h2>{title}</h2>
+      <h4>{author.email}</h4>
+      <p>{description}</p>
       <EditTask />
+      <DeleteTask />
+    </>
+      
     );
   return compare;
 }

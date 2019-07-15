@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { title, author, description } from './TaskDetail';
 
-export default function TaskDetailConst() {
+export default function TaskDetailCont() {
   return (
     <>
     <h2>{title}</h2>

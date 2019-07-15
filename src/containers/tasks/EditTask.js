@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'; // , Link
 import TaskForm from '../../components/tasks/TaskForm';
 import { updateTaskDetail } from '../../actions/taskDetailActions';
 import { getTaskDetailTitle, getTaskDetailDescription } from '../../selectors/taskDetailSelector';
@@ -37,7 +37,7 @@ class EditTask extends PureComponent {
     const { title, description } = this.state;//, author } = this.state;
     return (
       <>
-      <Link to={'/'}>Home</Link>
+      
       <p></p>
       <TaskForm
         onSubmit={this.handleSubmit}
