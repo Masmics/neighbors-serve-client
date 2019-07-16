@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { Redirect } from 'react-router';
-import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router';
+import { 
+  withRouter } from 'react-router-dom';
 import { delTask } from '../../actions/taskActions';
 import TaskDeleter from '../../components/tasks/TaskDeleter';
 
@@ -15,33 +16,38 @@ class DeleteTask extends PureComponent {
   }
 
   state = {
-    task: ''
+    task: '' //{}
     // title: ''
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { task } = this.state.task;
-    // const { title } = this.state.title;
+    const { task } = this.state;//.task;
     this.props.removeTask({ task });
-    // this.props.removeTask({ title });
     this.setState({ task: '' });
-    // this.setState({ title });
-    // <Redirect to={'/'} />;
-  }
+
+    // await(this.setState({ task: '' }))
+    return (
+      <Redirect to={'/'} />
+    ); // doesn't work
+
+    //if(!task === ''){
+    // return (
+    //   <Redirect to={'/'} />
+    // );
+  };
 
   render() {
-    const { task } = this.state.task;
+    const { task } = this.state;  
     return (                         
-      <>
+    <>
       <h3>Delete Task {task}?</h3>
       <TaskDeleter
         onSubmit={this.handleSubmit}
-        task={task}
+        task={task} 
         submitText="Delete Task"
       />
-
-      </>
+    </>
     );
   }
 }
@@ -49,7 +55,7 @@ class DeleteTask extends PureComponent {
 const mapDispatchToProps = (dispatch, { match }) => ({
   removeTask() {
     dispatch(delTask(match.params.id));
-  }    //(task, (_id: match.params.id)));            
+  }          
 });
 
 export default withRouter(connect(

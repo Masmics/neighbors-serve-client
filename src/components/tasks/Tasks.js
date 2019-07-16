@@ -26,7 +26,6 @@ Tasks.propTypes = {
       name: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired
-    // })
     }).isRequired
   })).isRequired
 };
