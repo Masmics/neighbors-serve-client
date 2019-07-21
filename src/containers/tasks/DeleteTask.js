@@ -15,26 +15,32 @@ class DeleteTask extends PureComponent {
   }
 
   state = {
-    task: '' //{}
+    task: ''
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { task } = this.state;//.task;
+    const { task } = this.state;
     this.props.removeTask({ task });
     this.setState({ task: '' });
-    <Redirect to={'/'} />;
+    // return (<Redirect to={'/'} />);
+    // <Redirect to={'/'} />;
 
     // if(task === ''){
-    // return (
-    //   <Redirect to={'/'} />
-    // );
+    //   return (
+    //     <Redirect to={'/'} />
+    //   );
     // }
   };
 
+  handleClick = () => {
+    return (
+      <Redirect to={'/'} />
+    );
+  }
+
   render() {
     const { task } = this.state;  
-
     return (  
       <>                       
         <p></p>
@@ -42,16 +48,12 @@ class DeleteTask extends PureComponent {
           <h4>Owner: Delete This Task?</h4>
           <TaskDeleter
             onSubmit={this.handleSubmit}
+            onClick={this.handleClick} // <-- redirect does not work
             task={task} 
             submitText="Delete Task"
           />
         </div>
       </>
-      // <>
-      //   <>
-      //     <Redirect to={'/'} />
-      //   </>
-      // </>
     );
   }
 }
