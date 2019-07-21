@@ -6,7 +6,7 @@ const request = (path, method, body) => {
   // eslint-disable-next-line no-undef
   return fetch(`${process.env.API_URL}${path}`, {
     method,
-    mode: 'no-cors',
+    // mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json',
       // requires all routes below to bear a valid user token
