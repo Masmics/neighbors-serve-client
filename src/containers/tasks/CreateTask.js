@@ -29,13 +29,16 @@ class CreateTask extends PureComponent {
   render() {
     const { title, description } = this.state;
     return (
-      <TaskForm
-        onSubmit={this.handleSubmit}
-        onChange={this.handleChange}
-        title={title}
-        description={description}
-        submitText="Create Task"
-      />
+      <>
+        <h4>Add a Task:</h4>
+        <TaskForm
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          title={title}
+          description={description}
+          submitText="Create Task"
+        />
+      </>
     );
   }
 }

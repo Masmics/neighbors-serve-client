@@ -14,20 +14,35 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
   const compare = !owned ?
     (
       <>
-        <Link to={'/'}>Home</Link>
-        <h2>{title}</h2>
-        <h4>{author.email}</h4>
-        <p>{description}</p>
+        <h4>
+          <Link to={'/'}>Home</Link>
+        </h4>
+        <div>
+          <h2>Task Detail</h2>
+        </div>
+        <div>
+          <h5>{title}</h5>
+          <p>by {author.name} ({author.email})</p>
+          <p>{description}</p>
+        </div>
       </>
     ) :
     (
+      
       <>
-      <Link to={'/'}>Home</Link>
-      <h2>{title}</h2>
-      <h4>{author.email}</h4>
-      <p>{description}</p>
-      <EditTask />
-      <DeleteTask />
+        <h4>
+          <Link to={'/'}>Home</Link>
+        </h4>
+        <div>
+          <h2>Task Detail</h2>
+        </div>
+        <div>
+          <h4>{title}</h4>
+          <p>by {author.name} ({author.email})</p>
+          <p>{description}</p>
+        </div>
+        <EditTask />
+        <DeleteTask />
     </>
       
     );

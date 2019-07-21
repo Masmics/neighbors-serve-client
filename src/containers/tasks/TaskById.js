@@ -31,8 +31,8 @@ class TaskById extends PureComponent {
     if(loading) return <h2>Loading...</h2>;
     return (
       <>
-      <div></div>
-      <TaskDetail owned={owned} task={task} />
+        <div></div>
+        <TaskDetail owned={owned} task={task} />
       </>
     );
   }
