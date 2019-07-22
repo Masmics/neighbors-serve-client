@@ -28,7 +28,11 @@ class AllTasks extends PureComponent {
     // get loading, tasks from this.props
     const { loading, tasks } = this.props;
     if(loading) return <h2>Loading...</h2>;
-    return <Tasks tasks={tasks} />;
+    if(tasks) {
+      return (
+        <Tasks tasks={tasks} />
+      ); 
+    } else { throw 'error'; }
   }
 }
 
