@@ -10,15 +10,18 @@ class CreateTask extends PureComponent {
   }
   state = {
     title: '',
+    // date: '',
+    contactName: '',
     description: ''
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { title, description } = this.state;
-    this.props.createTask({ title, description });
+    const { title, contactName, description } = this.state; // date,
+    // this.date = new Date();
+    this.props.createTask({ title, contactName, description }); // date,
     // clears form after submission
-    this.setState({ title: '', description: '' });
+    this.setState({ title: '', contactName: '', description: '' }); // date: '',
   }
 
   // set the name to this value
@@ -27,7 +30,7 @@ class CreateTask extends PureComponent {
   }
   
   render() {
-    const { title, description } = this.state;
+    const { title, contactName, description } = this.state;
     return (
       <>
         <h4>Add a Task:</h4>
@@ -35,6 +38,7 @@ class CreateTask extends PureComponent {
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
           title={title}
+          contactName={contactName}
           description={description}
           submitText="Create Task"
         />

@@ -4,29 +4,33 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import TaskForm from '../../components/tasks/TaskForm';
 import { updateTaskDetail } from '../../actions/taskDetailActions';
-import { getTaskDetailTitle, getTaskDetailDescription } from '../../selectors/taskDetailSelector';
+import { getTaskDetailTitle, getTaskDetailContactName, getTaskDetailDescription } from '../../selectors/taskDetailSelector';
 
 class EditTask extends PureComponent {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    contactName: PropTypes.string.isRequired,
+    // date: PropTypes.instanceOf(Date),
     description: PropTypes.string.isRequired,
     editTask: PropTypes.func.isRequired
   }
 
   state = {
     title: '',
+    contactName: '',
+    // date: '',
     description: ''
   }
 
   componentDidMount() {
-    this.setState({ title: this.props.title, description: this.props.description });
+    this.setState({ title: this.props.title, contactName: this.props.contactName, description: this.props.description });
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { title, description } = this.state;
-    this.props.editTask({ title, description });
-    this.setState({ title: '', description: '' });
+    const { title, contactName, description } = this.state;
+    this.props.editTask({ title, contactName, description });
+    this.setState({ title: '', contactName: '', description: '' });
   }
 
   handleChange = ({ target }) => {
@@ -34,7 +38,7 @@ class EditTask extends PureComponent {
   }
 
   render() {
-    const { title, description } = this.state;
+    const { title, contactName, description } = this.state;
     return (
       <>
       <p></p>
@@ -42,6 +46,7 @@ class EditTask extends PureComponent {
         onSubmit={this.handleSubmit}
         onChange={this.handleChange}
         title={title}
+        contactName={contactName}
         description={description}
         submitText="Edit Task"
       />
@@ -52,6 +57,7 @@ class EditTask extends PureComponent {
 
 const mapStateToProps = state => ({
   title: getTaskDetailTitle(state),
+  contactName: getTaskDetailContactName(state),
   description: getTaskDetailDescription(state)
 });
 

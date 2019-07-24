@@ -8,9 +8,7 @@ import TaskDeleter from '../../components/tasks/TaskDeleter';
 
 class DeleteTask extends PureComponent {
   static propTypes = {
-    // task: PropTypes.object.isRequired,
     task: PropTypes.object,
-    // title: PropTypes.string.isRequired,
     removeTask: PropTypes.func.isRequired
   }
 
@@ -18,8 +16,8 @@ class DeleteTask extends PureComponent {
     task: ''
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  handleSubmit = () => { //event => {
+    // event.preventDefault();
     const { task } = this.state;
     this.props.removeTask({ task });
     this.setState({ task: '' });
@@ -48,7 +46,7 @@ class DeleteTask extends PureComponent {
           <h4>Owner: Delete This Task?</h4>
           <TaskDeleter
             onSubmit={this.handleSubmit}
-            onClick={this.handleClick} // <-- redirect does not work
+            onClick={this.handleClick} // <-- this redirect does not work
             task={task} 
             submitText="Delete Task"
           />

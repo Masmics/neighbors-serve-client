@@ -19,7 +19,10 @@ function Tasks({ tasks }) {
 Tasks.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
     _id: PropTypes.string.isRequired,
+    // date: PropTypes.instanceOf(Date), //.isRequired,
     title: PropTypes.string.isRequired,
+    // taskType: PropTypes.string.isRequired,
+    contactName: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     author: PropTypes.shape({
       id: PropTypes.string.isRequired,

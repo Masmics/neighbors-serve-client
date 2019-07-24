@@ -12,9 +12,12 @@ class TaskById extends PureComponent {
   static propTypes = {
     task: PropTypes.shape({
       title: PropTypes.string,
+      // date: PropTypes.instanceOf(Date),
+      contactName: PropTypes.string,
       description: PropTypes.string,
       author: PropTypes.shape({
-        email: PropTypes.string
+        email: PropTypes.string,
+        name: PropTypes.string
       })
     }),
     owned: PropTypes.bool.isRequired,

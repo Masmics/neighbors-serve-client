@@ -3,6 +3,8 @@ export const getTaskDetailState = state => state.taskDetail;
 export const getTaskDetail = state => getTaskDetailState(state).detail;
 
 export const getTaskDetailTitle = state => getTaskDetail(state).title;
+export const getTaskDetailContactName = state => getTaskDetail(state).contactName;
+// export const getTaskDetailDate = state => getTaskDetail(state).date;
 export const getTaskDetailDescription = state => getTaskDetail(state).description;
 
 export const getTaskDetailLoading = state => getTaskDetailState(state).loading;
