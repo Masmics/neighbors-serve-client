@@ -16,7 +16,7 @@ TaskForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  // date: PropTypes.instanceOf(Date), //.isRequired,
+  date: PropTypes.instanceOf(Date), //.isRequired,
   contactName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   author: PropTypes.shape({

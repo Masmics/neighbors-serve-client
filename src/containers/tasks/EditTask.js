@@ -10,7 +10,7 @@ class EditTask extends PureComponent {
   static propTypes = {
     title: PropTypes.string.isRequired,
     contactName: PropTypes.string.isRequired,
-    // date: PropTypes.instanceOf(Date),
+    date: PropTypes.instanceOf(Date),
     description: PropTypes.string.isRequired,
     editTask: PropTypes.func.isRequired
   }

@@ -8,7 +8,7 @@ import DeleteTask from '../../containers/tasks/DeleteTask';
 function TaskDetail({ task, owned }) {  //}, owned  }) {
   const {
     title,
-    // date,
+    date,
     // taskType,
     contactName,
     description,
@@ -28,7 +28,7 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
           {/* <DetailContents /> */}
           <h5>{title}</h5>
           <p>posted by {contactName}, at {author.email}</p>
-          {/* // on {date}</p> */}
+          <p>{date}</p>
           {/* <h3>Type of Action or Concern: {taskType}</h3> */}
           <p>{description}</p>
         </div>
@@ -46,8 +46,8 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
         <div>
           {/* <DetailContents /> */}
           <h5>{title}</h5>
-          <p>posted by {contactName} at {author.email}</p> 
-          {/* // on {date}</p> */}
+          <p>posted by {contactName}, at {author.email}</p>
+          <p>{date}</p>
           {/* <h3>Type of Action or Concern: {taskType}</h3> */}
           <p>{description}</p>
         </div>
@@ -63,7 +63,7 @@ TaskDetail.propTypes = {
   owned: PropTypes.bool.isRequired,
   task: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    // date: PropTypes.instanceOf(Date), // isRequired,
+    date: PropTypes.instanceOf(Date), // isRequired,
     contactName: PropTypes.string.isRequired,
     // taskType: PropTypes.string.isRequired, 
     description: PropTypes.string.isRequired,

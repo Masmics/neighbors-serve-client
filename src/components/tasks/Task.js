@@ -11,7 +11,7 @@ function Task({ task }) {
 Task.propTypes = {
   task: PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    // date: PropTypes.instanceOf(Date), //.isRequired,
+    date: PropTypes.instanceOf(Date), //.isRequired,
     title: PropTypes.string.isRequired,
     contactName: PropTypes.string.isRequired,
     // altEmail: PropTypes.string.isRequired,
