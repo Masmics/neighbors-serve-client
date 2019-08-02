@@ -9,19 +9,24 @@ class CreateTask extends PureComponent {
     createTask: PropTypes.func.isRequired
   }
   state = {
-    title: '',
     // date: '',
+    title: '',
+    taskType: '',
+    location: '',
+    streetAddr: '',
     contactName: '',
+    contactPhone: '',
+    contactEmail: '',
     description: ''
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { title, contactName, description } = this.state; // date,
+    const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state; // date,
     // this.date = new Date();
-    this.props.createTask({ title, contactName, description }); // date,
+    this.props.createTask({ title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description }); // date,
     // clears form after submission
-    this.setState({ title: '', contactName: '', description: '' }); // date: '',
+    this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', description: '' }); // date: '',
   }
 
   // set the name to this value
@@ -30,7 +35,7 @@ class CreateTask extends PureComponent {
   }
   
   render() {
-    const { title, contactName, description } = this.state;
+    const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state;
     return (
       <>
         <h4>Add a Task:</h4>
@@ -38,7 +43,12 @@ class CreateTask extends PureComponent {
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
           title={title}
+          taskType={taskType}
+          location={location}
           contactName={contactName}
+          contactPhone={contactPhone}
+          contactEmail={contactEmail}
+          streetAddr={streetAddr}
           description={description}
           submitText="Create Task"
         />

@@ -11,9 +11,43 @@ import { getSessionId } from '../../selectors/sessionSelector';
 class TaskById extends PureComponent {
   static propTypes = {
     task: PropTypes.shape({
+      date: PropTypes.string,
       title: PropTypes.string,
-      date: PropTypes.instanceOf(Date),
+      taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
+        labor: PropTypes.bool,
+        trades: PropTypes.bool,
+        clerical: PropTypes.bool,
+        technical: PropTypes.bool,
+        tutoring: PropTypes.bool,
+        personCare: PropTypes.bool,
+        event: PropTypes.bool
+      })).isRequired,
+      location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
+        beaverton: PropTypes.bool,
+        clackamas: PropTypes.bool,
+        gresham: PropTypes.bool,
+        happyValley: PropTypes.bool,
+        lakeOswego: PropTypes.bool,
+        milwaukie: PropTypes.bool,
+        portland: PropTypes.arrayOf(PropTypes.shape({
+          downtown: PropTypes.bool,
+          north: PropTypes.bool,
+          northEastClose: PropTypes.bool,
+          northEast: PropTypes.bool,
+          northWest: PropTypes.bool,
+          southEastClose: PropTypes.bool,
+          southEast: PropTypes.bool,
+          southWest: PropTypes.bool
+        })),
+        sandy: PropTypes.bool,
+        troutdale: PropTypes.bool,
+        tualatin: PropTypes.bool,
+        vancouver: PropTypes.bool,
+      })).isRequired,
+      streetAddr: PropTypes.string,
       contactName: PropTypes.string,
+      contactPhone: PropTypes.string,
+      contactEmail: PropTypes.string,
       description: PropTypes.string,
       author: PropTypes.shape({
         email: PropTypes.string,

@@ -8,13 +8,22 @@ import DeleteTask from '../../containers/tasks/DeleteTask';
 function TaskDetail({ task, owned }) {  //}, owned  }) {
   const {
     title,
+    taskType,
     date,
-    // taskType,
+    location, 
+    streetAddr,
     contactName,
+    contactPhone,
+    contactEmail,
     description,
     author
   } = task;
   
+  const formattedDate = function parseDate(date) {
+    date = String(date).substr(0, 9);
+    return date;
+  };
+
   const compare = !owned ?
     (
       <>
@@ -28,9 +37,15 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
           {/* <DetailContents /> */}
           <h5>{title}</h5>
           <p>posted by {contactName}, at {author.email}</p>
+          {/* <p>{formattedDate}</p> */}
           <p>{date}</p>
           {/* <h3>Type of Action or Concern: {taskType}</h3> */}
-          <p>{description}</p>
+          <p>Task Type: {taskType}</p>
+          <p>Description: {description}</p>
+          <p>Location/Neighborhood: {location}</p>
+          <p>Street Address/Intersection: {streetAddr}</p>
+          <p>Contact Phone: {contactPhone}</p>
+          <p>Contact Email: {contactEmail}</p>
         </div>
       </>
     ) :
@@ -48,8 +63,14 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
           <h5>{title}</h5>
           <p>posted by {contactName}, at {author.email}</p>
           <p>{date}</p>
+          {/* <p>{formattedDate}</p> */}
           {/* <h3>Type of Action or Concern: {taskType}</h3> */}
-          <p>{description}</p>
+          <p>Task Type: {taskType}</p>
+          <p>Description: {description}</p>
+          <p>Location/Neighborhood: {location}</p>
+          <p>Street Address/Intersection: {streetAddr}</p>
+          <p>Contact Phone: {contactPhone}</p>
+          <p>Contact Email: {contactEmail}</p>
         </div>
         <EditTask />
         <DeleteTask />
@@ -62,10 +83,43 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
 TaskDetail.propTypes = {
   owned: PropTypes.bool.isRequired,
   task: PropTypes.shape({
+    date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date), // isRequired,
+    taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
+      labor: PropTypes.bool,
+      trades: PropTypes.bool,
+      clerical: PropTypes.bool,
+      technical: PropTypes.bool,
+      tutoring: PropTypes.bool,
+      personCare: PropTypes.bool,
+      event: PropTypes.bool
+    })).isRequired,
+    location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
+      beaverton: PropTypes.bool,
+      clackamas: PropTypes.bool,
+      gresham: PropTypes.bool,
+      happyValley: PropTypes.bool,
+      lakeOswego: PropTypes.bool,
+      milwaukie: PropTypes.bool,
+      portland: PropTypes.arrayOf(PropTypes.shape({
+        downtown: PropTypes.bool,
+        north: PropTypes.bool,
+        northEastClose: PropTypes.bool,
+        northEast: PropTypes.bool,
+        northWest: PropTypes.bool,
+        southEastClose: PropTypes.bool,
+        southEast: PropTypes.bool,
+        southWest: PropTypes.bool
+      })),
+      sandy: PropTypes.bool,
+      troutdale: PropTypes.bool,
+      tualatin: PropTypes.bool,
+      vancouver: PropTypes.bool,
+    })).isRequired,
+    streetAddr: PropTypes.string.isRequired,
     contactName: PropTypes.string.isRequired,
-    // taskType: PropTypes.string.isRequired, 
+    contactPhone: PropTypes.string.isRequired,
+    contactEmail: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     author: PropTypes.shape({
       email: PropTypes.string.isRequired,

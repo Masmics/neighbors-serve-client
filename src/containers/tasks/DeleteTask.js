@@ -16,19 +16,11 @@ class DeleteTask extends PureComponent {
     task: ''
   }
 
-  handleSubmit = () => { //event => {
+  handleSubmit = () => {
     // event.preventDefault();
     const { task } = this.state;
     this.props.removeTask({ task });
     this.setState({ task: '' });
-    // return (<Redirect to={'/'} />);
-    // <Redirect to={'/'} />;
-
-    // if(task === ''){
-    //   return (
-    //     <Redirect to={'/'} />
-    //   );
-    // }
   };
 
   handleClick = () => {
