@@ -25,7 +25,10 @@ class DeleteTask extends PureComponent {
 
   handleClick = () => {
     return (
-      <Redirect to={'/'} />
+      <>
+        <h2>Task Successfully Deleted</h2>
+        <Redirect to={'/'} />
+      </>
     );
   }
 

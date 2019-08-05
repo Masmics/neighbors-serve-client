@@ -34,12 +34,10 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
           <h2>Task Detail</h2>
         </div>
         <div>
-          {/* <DetailContents /> */}
           <h5>{title}</h5>
           <p>posted by {contactName}, at {author.email}</p>
           {/* <p>{formattedDate}</p> */}
           <p>{date}</p>
-          {/* <h3>Type of Action or Concern: {taskType}</h3> */}
           <p>Task Type: {taskType}</p>
           <p>Description: {description}</p>
           <p>Location/Neighborhood: {location}</p>
@@ -59,12 +57,10 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
           <h2>Task Detail</h2>
         </div>
         <div>
-          {/* <DetailContents /> */}
           <h5>{title}</h5>
           <p>posted by {contactName}, at {author.email}</p>
           <p>{date}</p>
           {/* <p>{formattedDate}</p> */}
-          {/* <h3>Type of Action or Concern: {taskType}</h3> */}
           <p>Task Type: {taskType}</p>
           <p>Description: {description}</p>
           <p>Location/Neighborhood: {location}</p>
@@ -86,35 +82,33 @@ TaskDetail.propTypes = {
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-      labor: PropTypes.bool,
-      trades: PropTypes.bool,
-      clerical: PropTypes.bool,
-      technical: PropTypes.bool,
-      tutoring: PropTypes.bool,
-      personCare: PropTypes.bool,
-      event: PropTypes.bool
+      Labor: PropTypes.string, //.bool,
+      Trades: PropTypes.string, //.bool,
+      Clerical: PropTypes.string, //.bool,
+      Technical: PropTypes.string, //.bool,
+      Teaching: PropTypes.string, //.bool,
+      Caregiving: PropTypes.string, //.bool,
+      Event: PropTypes.string, //.bool
     })).isRequired,
     location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-      beaverton: PropTypes.bool,
-      clackamas: PropTypes.bool,
-      gresham: PropTypes.bool,
-      happyValley: PropTypes.bool,
-      lakeOswego: PropTypes.bool,
-      milwaukie: PropTypes.bool,
-      portland: PropTypes.arrayOf(PropTypes.shape({
-        downtown: PropTypes.bool,
-        north: PropTypes.bool,
-        northEastClose: PropTypes.bool,
-        northEast: PropTypes.bool,
-        northWest: PropTypes.bool,
-        southEastClose: PropTypes.bool,
-        southEast: PropTypes.bool,
-        southWest: PropTypes.bool
-      })),
-      sandy: PropTypes.bool,
-      troutdale: PropTypes.bool,
-      tualatin: PropTypes.bool,
-      vancouver: PropTypes.bool,
+      Beaverton: PropTypes.string, //.bool,
+      Clackamas: PropTypes.string, //.bool,
+      Gresham: PropTypes.string, //.bool,
+      HappyValley: PropTypes.string, //.bool,
+      LakeOswego: PropTypes.string, //.bool,
+      Milwaukie: PropTypes.string, //.bool,
+      Downtown: PropTypes.string, //.bool,
+      North: PropTypes.string, //.bool,
+      NECloseIn: PropTypes.string, //.bool,
+      NorthEast: PropTypes.string, //.bool,
+      NorthWest: PropTypes.string, //.bool,
+      SECloseIn: PropTypes.string, //.bool,
+      SouthEast: PropTypes.string, //.bool,
+      SouthWest: PropTypes.string, //.bool,
+      Sandy: PropTypes.string, //.bool,
+      Troutdale: PropTypes.string, //.bool,
+      Tualatin: PropTypes.string, //.bool,
+      Vancouver: PropTypes.string, //.bool,
     })).isRequired,
     streetAddr: PropTypes.string.isRequired,
     contactName: PropTypes.string.isRequired,

@@ -38,7 +38,6 @@ class CreateTask extends PureComponent {
     const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state;
     return (
       <>
-        <h4>Add a Task:</h4>
         <TaskForm
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}

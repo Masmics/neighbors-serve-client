@@ -7,7 +7,7 @@ export const getTaskDetailTaskType = state => getTaskDetail(state).taskType;
 export const getTaskDetailContactName = state => getTaskDetail(state).contactName;
 export const getTaskDetailContactPhone = state => getTaskDetail(state).contactPhone;
 export const getTaskDetailContactEmail = state => getTaskDetail(state).contactEmail;
-export const getTaskDetailDate = state => getTaskDetail(state).date; // || {}; ?
+export const getTaskDetailDate = state => getTaskDetail(state).date; // || {};
 export const getTaskDetailLocation = state => getTaskDetail(state).location;
 export const getTaskDetailStreetAddr = state => getTaskDetail(state).streetAddr;
 export const getTaskDetailDescription = state => getTaskDetail(state).description;
