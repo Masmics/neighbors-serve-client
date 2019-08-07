@@ -3,13 +3,12 @@ import CreateTask from '../containers/tasks/CreateTask';
 import AllTasks from '../containers/tasks/AllTasks';
 import Header from './Header';
 // import styles from '../css/styles.css';
-import styles from '../css/home.css';
+import homestyles from '../css/Home.css';
 
 export default function Home() {
   return (
   <>
-    <main style={styles}>
-      <Header />
+    <main style={homestyles}>
       <div></div>
       <CreateTask />
       <AllTasks />

@@ -2,22 +2,24 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import Landing from './Landing';
 import Home from './Home';
 import Callback from '../containers/auth/Callback';
 import { withSession } from '../containers/auth/withSession';
 import TaskById from '../containers/tasks/TaskById';
+import Header from './Header';
+import '../css/styles.css';
 
 // only withSession() routes require login
 export default function App() {
   return (
     <Router>
-      {/* <Link to="/">Sign In/Sign Up</Link> */}
+      <Header />
       <Switch>
-        <Route exact path="/" component={withSession(Home)} />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/home" component={withSession(Home)} />
         <Route path="/callback" component={Callback} />
         <Route path="/:id" component={withSession(TaskById)} />
       </Switch>

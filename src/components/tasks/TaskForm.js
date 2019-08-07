@@ -19,7 +19,7 @@ function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPho
         <br/>
         <label>Type of Volunteer Work Needed: &nbsp; &nbsp;</label>
         <select name="taskType" value={taskType} onChange={onChange}>
-          <option selected>Select One:</option>
+          <option defaultValue>Select One:</option>
           <option value="Labor">Labor</option>
           <option value="Trades">Trades</option>
           <option value="Clerical">Clerical</option>
