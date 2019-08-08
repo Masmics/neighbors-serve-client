@@ -23,13 +23,13 @@ const Header = () => (
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <a>
+          <div>
             <Link to={'/'}>
               <img src="../../public/image/logomakr_829Z40.png" 
                 alt="Neighbors title and logo: two stick figures lifting 
                 a box together" style={{ height: '94px', lineHeight: '94px' }} />
             </Link>
-          </a>
+          </div>
         </div>
       </div>
     </header>
