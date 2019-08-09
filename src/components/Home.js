@@ -8,7 +8,7 @@ import homestyles from '../css/Home.css';
 
 const button = {
   borderRadius: '28px', color: '3114cc', 
-  backgroundColor: '#E4FFBF', margin: '3px', marginTop: '15px',
+  backgroundColor: '#E4FFBF', margin: '3px', marginTop: '20px',
   boxShadow: '4px 4px 4px 4px'
 };
 
@@ -18,7 +18,6 @@ export default function Home() {
     <main style={homestyles}>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingRight: '4%' }}>
-        <div></div>
 
         <div>
           <Link to="/new" >
@@ -40,7 +39,7 @@ export default function Home() {
         <h4>Volunteer Opportunities and Alerts</h4>
         <AllTasks />
       </div>
-      
+
 
     </main>
   </>

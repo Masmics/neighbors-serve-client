@@ -1,11 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import EditTask from '../../containers/tasks/EditTask';
 import DeleteTask from '../../containers/tasks/DeleteTask';
-// import DetailContents from './DetailContents';
+import styles from '../../css/Home.css';
 
-function TaskDetail({ task, owned }) {  //}, owned  }) {
+const homeButton = {
+  borderRadius: '28px', color: '3114cc', backgroundColor: '#E4FFBF',
+  width: '80px', boxShadow: '4px 4px 4px 4px', margin: '3px', 
+  marginTop: '5px', textAlign: 'center'
+};
+
+const editButton = {
+  borderRadius: '28px', color: '3114cc', backgroundColor: '#E4FFBF',
+  width: '80px', boxShadow: '4px 4px 4px 4px', textAlign: 'center'
+};
+
+function TaskDetail({ task, owned }) {
   const {
     title,
     taskType,
@@ -19,59 +29,78 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
     author
   } = task;
   
-  // const formattedDate = function parseDate(date) {
-  //   date = String(date).substr(0, 9);
-  //   return date;
-  // };
-
   const compare = !owned ?
     (
       <>
-        <h4>
-          <Link to={'/'}>Home</Link>
-        </h4>
-        <div>
-          <h2>Task Detail</h2>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Link to={'/home'}>
+            <button type="button" style={homeButton}><b>Home</b></button>
+          </Link>
         </div>
-        <div>
-          <h5>{title}</h5>
-          <p>posted by {contactName}, at {author.email}</p>
-          {/* <p>{formattedDate}</p> */}
-          <p>{date}</p>
-          <p>Task Type: {taskType}</p>
-          <p>Description: {description}</p>
-          <p>Location/Neighborhood: {location}</p>
-          <p>Street Address/Intersection: {streetAddr}</p>
-          <p>Contact Phone: {contactPhone}</p>
-          <p>Contact Email: {contactEmail}</p>
+        <div styles={styles}>
+
+          <div>
+            <h2>Task Detail</h2>
+          </div>
+
+          <div>
+            <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', 
+              paddingBottom: '25px', backgroundColor: '#C7C6B0' }}>
+              <legend style={{ border: '1px solid', backgroundColor: 'white', padding: '2px' }}><b>  {title}  </b></legend>
+              <p><b>Posted by: </b>{contactName}, at {author.email}</p>
+              {/* <p>{formattedDate}</p> */}
+              <p><b>Date: </b>{date}</p>
+              <p><b>Task Type: </b>{taskType}</p>
+              <p><b>Description: </b>{description}</p>
+              <p><b>Location/Neighborhood: </b>{location}</p>
+              <p><b>Street Address/Intersection: </b>{streetAddr}</p>
+              <p><b>Contact Phone: </b>{contactPhone}</p>
+              <p><b>Contact Email: </b>{contactEmail}</p>
+            </fieldset>
+          </div>
         </div>
       </>
     ) :
+
     (
-      
       <>
-        <h4>
-          <Link to={'/'}>Home</Link>
-        </h4>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Link to={'/home'}>
+            <button type="button" style={homeButton}><b>Home</b></button>
+          </Link>
+        </div>
+
         <div>
           <h2>Task Detail</h2>
         </div>
+
         <div>
-          <h5>{title}</h5>
-          <p>posted by {contactName}, at {author.email}</p>
-          <p>{date}</p>
-          {/* <p>{formattedDate}</p> */}
-          <p>Task Type: {taskType}</p>
-          <p>Description: {description}</p>
-          <p>Location/Neighborhood: {location}</p>
-          <p>Street Address/Intersection: {streetAddr}</p>
-          <p>Contact Phone: {contactPhone}</p>
-          <p>Contact Email: {contactEmail}</p>
+          <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', 
+            paddingBottom: '25px', backgroundColor: '#C7C6B0' }}>
+            <legend style={{ border: '1px solid', backgroundColor: 'white', padding: '2px' }}><b>  {title}  </b></legend>
+            <p><b>Posted by: </b>{contactName}, at {author.email}</p>
+            {/* <p>{formattedDate}</p> */}
+            <p><b>Date: </b>{date}</p>
+            <p><b>Task Type: </b>{taskType}</p>
+            <p><b>Description: </b>{description}</p>
+            <p><b>Location/Neighborhood: </b>{location}</p>
+            <p><b>Street Address/Intersection: </b>{streetAddr}</p>
+            <p><b>Contact Phone: </b>{contactPhone}</p>
+            <p><b>Contact Email: </b>{contactEmail}</p>
+          </fieldset>
         </div>
-        <EditTask />
-        <DeleteTask />
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 15px 20px 15px' }}>
+          <div>
+            <DeleteTask />
+          </div>
+          <div>
+            <Link to={'/update'}>
+              <button type="button" style={editButton}><b>Edit Task</b></button>
+            </Link>
+          </div>
+        </div>
     </>
-      
     );
   return compare;
 }
@@ -123,3 +152,4 @@ TaskDetail.propTypes = {
 };
 
 export default TaskDetail;
+

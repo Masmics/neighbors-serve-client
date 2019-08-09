@@ -9,7 +9,6 @@ class CreateTask extends PureComponent {
     createTask: PropTypes.func.isRequired
   }
   state = {
-    // date: '',
     title: '',
     taskType: '',
     location: '',
@@ -22,11 +21,10 @@ class CreateTask extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state; // date,
-    // this.date = new Date();
-    this.props.createTask({ title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description }); // date,
+    const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state;
+    this.props.createTask({ title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description });
     // clears form after submission
-    this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', description: '' }); // date: '',
+    this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', description: '' });
   }
 
   // set the name to this value

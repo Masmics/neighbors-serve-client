@@ -27,7 +27,7 @@ class DeleteTask extends PureComponent {
     return (
       <>
         <h2>Task Successfully Deleted</h2>
-        <Redirect to={'/'} />
+        <Redirect to={'/home'} />
       </>
     );
   }
@@ -36,15 +36,11 @@ class DeleteTask extends PureComponent {
     const { task } = this.state;  
     return (  
       <>                       
-        <p></p>
         <div>
-          <h4>Owner: Delete This Task?</h4>
           <TaskDeleter
             onSubmit={this.handleSubmit}
-            onClick={this.handleClick} // <-- this redirect does not work
-            task={task} 
-            submitText="Delete Task"
-          />
+            onClick={this.handleClick}
+            task={task} />
         </div>
       </>
     );

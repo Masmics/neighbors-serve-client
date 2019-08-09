@@ -1,11 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const legend = ' Add a Community Volunteer Request or Notice';
+
+const homeButton = {
+  borderRadius: '28px', color: '3114cc', 
+  backgroundColor: '#E4FFBF', margin: '3px', marginTop: '5px',
+  width: '80px', boxShadow: '4px 4px 4px 4px'
+};
 
 function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPhone, contactEmail, location, streetAddr, description, submitText }) {  
   return (
     <>
+      <div style={{ textAlign: 'center' }}>
+        <Link to="/home" >
+          <button type="button" style={homeButton}><b>Home</b></button>
+        </Link>
+      </div>
+
     <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', paddingBottom: '25px' }}>
       <legend>
         <h3>{legend}</h3>

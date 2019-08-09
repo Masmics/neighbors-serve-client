@@ -9,15 +9,14 @@ import { getTaskDetailTitle, getTaskDetailTaskType, getTaskDetailContactName, ge
 class EditTask extends PureComponent {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    // date: PropTypes.string,
-    taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-      Labor: PropTypes.string, //.bool,
-      Trades: PropTypes.string, //.bool,
-      Clerical: PropTypes.string, //.bool,
-      Technical: PropTypes.string, //.bool,
-      Teaching: PropTypes.string, //.bool,
-      Caregiving: PropTypes.string, //.bool,
-      Event: PropTypes.string, //.bool
+    taskType: PropTypes.arrayOf(PropTypes.shape({
+      Labor: PropTypes.string,
+      Trades: PropTypes.string,
+      Clerical: PropTypes.string,
+      Technical: PropTypes.string,
+      Teaching: PropTypes.string,
+      Caregiving: PropTypes.string,
+      Event: PropTypes.string,
     })).isRequired,
     location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
       Beaverton: PropTypes.string, //.bool,
