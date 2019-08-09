@@ -19,10 +19,10 @@ function TaskDetail({ task, owned }) {  //}, owned  }) {
     author
   } = task;
   
-  const formattedDate = function parseDate(date) {
-    date = String(date).substr(0, 9);
-    return date;
-  };
+  // const formattedDate = function parseDate(date) {
+  //   date = String(date).substr(0, 9);
+  //   return date;
+  // };
 
   const compare = !owned ?
     (

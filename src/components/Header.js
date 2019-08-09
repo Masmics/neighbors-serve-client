@@ -1,47 +1,48 @@
 import React from 'react'; 
-import {
-  BrowserRouter as Router,
-  Link 
-} from 'react-router-dom';
-// import styles from '../css/Header.css';
+import { Link } from 'react-router-dom';
 
 const button = {
-  borderRadius: '28px', color: '3114cc', 
-  backgroundColor: '#e0ff88', margin: '3px' 
+  borderRadius: '100px', backgroundColor: 'black', fontSize: '11px',
+  padding: '12px 4px 12px 4px', border: '2.5px solid #8274cd', color: '#bbff00', margin: '5px'
 };
 
 const Header = () => (
   <>
     <header style={{ height: '122px', width: '100%', color: '#bbff00', 
-      backgroundColor: 'black', display: 'inline-block' }}>
+      backgroundColor: 'black', display: 'flex', justifyContent: 'space-between',
+      alignItems: 'center' }}>
       <div>
-        
-        <div style={{ textAlign: 'left', verticalAlign: 'middle' }}>
-          <Link to="/home" >
-            <button type="button" style={button}><b>Sign In/Sign Up</b></button>
-          </Link>
-        </div>
-
-        <div style={{ textAlign: 'center' }}>
-          <div>
-            <Link to={'/'}>
-              <img src="../../public/image/logomakr_829Z40.png" 
-                alt="Neighbors title and logo: two stick figures lifting 
-                a box together" style={{ height: '94px', lineHeight: '94px' }} />
-            </Link>
-          </div>
-        </div>
+        <Link to="/home" >
+          <button type="button" style={button}>
+            <b>
+              <div>  Sign In/  </div>
+              <div>  Sign Up  </div>
+            </b>
+          </button>
+        </Link>
       </div>
+
+      <div>
+        <Link to={'/home'}>
+          <img src="../../public/image/logomakr_829Z40.png" 
+            alt="Neighbors title and logo: two stick figures lifting 
+                a box together" style={{ height: '94px', lineHeight: '94px' }} />
+        </Link>
+      </div>
+
+      <div>
+        <Link to={'/'}>
+          <img src="../../public/image/logomakr_72c7g0.png" style={{ height: '60px', margin: '5px' }} />
+        </Link>
+      </div>
+
     </header>
   </>
 );
 
-
-// later:
-{/* <div style={{ textAlign: 'right', marginBottom: '50px' }}>
-<Link to="/" >
-  <button type="button" style={button}><b>Back to Home</b></button>
-</Link>
-</div> */}
-
 export default Header;
+
+// , flexDirection: 'column', justifyContent: 'center'
+// left button:  style={{ textAlign: 'left', verticalAlign: 'middle' }}
+// middle:  style={{ textAlign: 'center' }}
+// 

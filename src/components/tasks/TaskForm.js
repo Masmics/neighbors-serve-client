@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPhone, contactEmail, streetAddr, description, submitText }) {  
+const legend = ' Add a Community Volunteer Request or Notice';
+
+function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPhone, contactEmail, location, streetAddr, description, submitText }) {  
   return (
     <>
-    <fieldset>
-      {/* <h3>Add a Task Listing</h3> */}
+    <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', paddingBottom: '25px' }}>
       <legend>
-        <h3>Add a Community Volunteer Request or Notice</h3>
+        <h3>{legend}</h3>
       </legend>
       <form onSubmit={onSubmit} netlify="netlify">
         <br/>
         <label>Title of Request or Notice:  </label>
-        {/* <input name="title" value={title} onChange={onChange} placeholder="Task title" /> */}
         <input size="50" name="title" value={title} onChange={onChange} placeholder="Task Title" />
 
         <br/>
@@ -36,13 +36,13 @@ function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPho
 
         <br/>
         <br/>
-        <textarea rows="5" cols="50" name="description" value={description} onChange={onChange} placeholder="Detailed Description" />
+        <textarea style={{ fontFamily: 'verdana, arial, sansSerif' }} rows="5" cols="40" name="description" value={description} onChange={onChange} placeholder="Detailed Description" />
 
         <br/>
         <br/>
         <label>Sector of Portland or Neighboring City:  &nbsp; &nbsp;</label>
         <select name="location" value={location} onChange={onChange}>
-          <option selected>Select One:</option>
+          <option defaultValue>Select One:</option>
           <option value="Beaverton">Beaverton, OR</option>
           <option value="Clackamas">Clackamas, OR</option>
           <option value="Gresham">Gresham, OR</option>
