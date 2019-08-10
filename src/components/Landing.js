@@ -18,7 +18,7 @@ export default function Landing() {
         </div>
 
         <div>
-          <img src="../../assets/old-town-portland-oregon-sign-goodfreephotos-com.jpg" 
+          <img src="https://cdn.pixabay.com/photo/2015/07/11/23/00/portland-841428_1280.jpg" 
             alt="aerial view of Portland at sunset" style={{ height: '70%', width: '70%', 
               marginLeft: '15%', marginRight: '15%', marginTop: '20px', marginBottom: '22px',
               boxShadow: '8px 8px' }} />
@@ -39,7 +39,7 @@ export default function Landing() {
 
         <div style={{ borderStyle: 'solid', borderWidth: '5px', height: '250px', paddingBottom: '15px', 
           marginTop: '15px', backgroundColor: '#C7C6B0' }}>
-          <img src="../../assets/volunteer-balloons-bar-by-rawpixel-on-pixabay.png" 
+          <img src="https://cdn.pixabay.com/photo/2018/07/17/09/43/activity-3543821__480.png" 
             alt="a rainbow of metallic balloons spelling out volunteer" 
             style={{ height: '80%', width: '70%', marginLeft: '15%', marginRight: '15%' }} />
           <h5>Please <span><Link to="/home">log in or sign up</Link>

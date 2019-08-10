@@ -6,8 +6,7 @@ const Footer = () => (
       <address>
         <i>Contact Us: <a href="mailto:neighbors.serve@gmail.com">neighbors.serve@gmail.com</a></i>
       </address>
-      <i>Images courtesy of RawPixel of pixabay.com, goodfreephotos.com, 
-         and logomakr.com</i>
+      <i>Images courtesy of LogoMakr.com and RawPixel and Free-Photos of pixabay.com</i>
     </footer>
   </>
 );
