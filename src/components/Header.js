@@ -25,7 +25,7 @@ const Header = () => (
 
       <div>
         <Link to={'/home'}>
-          <img src="../../public/image/logomakr_829Z40.png" 
+          <img src="../../assets/logomakr_829Z40.png" 
             alt="Neighbors title and logo: two stick figures lifting 
                 a box together" style={{ height: '94px', lineHeight: '94px' }} />
         </Link>
@@ -33,7 +33,7 @@ const Header = () => (
 
       <div>
         <Link to={'/'}>
-          <img src="../../public/image/logomakr_72c7g0.png" style={{ height: '60px', margin: '5px' }} />
+          <img src="../../assets/logomakr_72c7g0.png" style={{ height: '60px', margin: '5px' }} />
         </Link>
       </div>
 
