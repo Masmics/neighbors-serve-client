@@ -11,7 +11,7 @@ const Header = () => (
     <header style={{ height: '122px', width: '100%', color: '#bbff00', 
       backgroundColor: 'black', display: 'flex', justifyContent: 'space-between',
       alignItems: 'center' }}>
-        
+
       <div>
         <Link to="/home" >
           <button type="button" style={button}>
@@ -25,7 +25,7 @@ const Header = () => (
 
       <div>
         <Link to={'/home'}>        
-          <img src="../../assets/logomakr_829Z40.png" alt="Neighbors title and logo: two stick 
+          <img src="../../assets/LogoMakr_829Z40.png" alt="Neighbors title and logo: two stick 
             figures lifting a box together" style={{ height: '94px', lineHeight: '94px' }} />
         </Link>
       </div>
