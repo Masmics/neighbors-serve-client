@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AllTasks from '../containers/tasks/AllTasks';
-import homestyles from '../css/Home.css';
 
 const button = {
   borderRadius: '28px', color: '3114cc', 
@@ -12,8 +11,7 @@ const button = {
 export default function Home() {
   return (
   <>
-    <main style={homestyles}>
-
+    <main>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingRight: '4%' }}>
 
         <div>
