@@ -11,7 +11,8 @@ export default function Landing() {
     <main style={styles}>
       <section className="landing">
 
-        <div style={{ borderStyle: 'solid', borderColor: 'black', borderWidth: '3px', backgroundColor: '#C7C6B0', padding: '15px', paddingBottom: '20px'  }}>
+        <div style={{ borderStyle: 'solid', borderColor: 'black', borderWidth: '3px', backgroundColor: '#C7C6B0', 
+          padding: '15px', paddingBottom: '20px'  }}>
           <h5><em>Connecting community volunteers with opportunities 
           in the Portland Metro area</em></h5>
         </div>
@@ -47,7 +48,6 @@ export default function Landing() {
 
       </section>
 
-      
     </main>
   </>
   );

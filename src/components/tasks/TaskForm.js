@@ -1,24 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const legend = ' Add a Community Volunteer Request or Notice';
-
-const homeButton = {
-  borderRadius: '28px', color: '3114cc', 
-  backgroundColor: '#E4FFBF', margin: '3px', marginTop: '5px',
-  width: '80px', boxShadow: '4px 4px 4px 4px'
-};
-
-function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPhone, contactEmail, location, streetAddr, description, submitText }) {  
+function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPhone, contactEmail, location, streetAddr, description, submitText, legend }) {  
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <Link to="/home" >
-          <button type="button" style={homeButton}><b>Home</b></button>
-        </Link>
-      </div>
-
     <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', paddingBottom: '25px' }}>
       <legend>
         <h3>{legend}</h3>
@@ -111,34 +96,34 @@ TaskForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   date: PropTypes.string,
   title: PropTypes.string.isRequired,
-  taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-    Labor: PropTypes.string, //.bool,
-    Trades: PropTypes.string, //.bool,
-    Clerical: PropTypes.string, //.bool,
-    Technical: PropTypes.string, //.bool,
-    Teaching: PropTypes.string, //.bool,
-    Caregiving: PropTypes.string, //.bool,
-    Event: PropTypes.string, //.bool
+  taskType: PropTypes.arrayOf(PropTypes.shape({
+    Labor: PropTypes.string,
+    Trades: PropTypes.string,
+    Clerical: PropTypes.string,
+    Technical: PropTypes.string,
+    Teaching: PropTypes.string,
+    Caregiving: PropTypes.string,
+    Event: PropTypes.string,
   })).isRequired,
-  location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-    Beaverton: PropTypes.string, //.bool,
-    Clackamas: PropTypes.string, //.bool,
-    Gresham: PropTypes.string, //.bool,
-    HappyValley: PropTypes.string, //.bool,
-    LakeOswego: PropTypes.string, //.bool,
-    Milwaukie: PropTypes.string, //.bool,
-    Downtown: PropTypes.string, //.bool,
-    North: PropTypes.string, //.bool,
-    NECloseIn: PropTypes.string, //.bool,
-    NorthEast: PropTypes.string, //.bool,
-    NorthWest: PropTypes.string, //.bool,
-    SECloseIn: PropTypes.string, //.bool,
-    SouthEast: PropTypes.string, //.bool,
-    SouthWest: PropTypes.string, //.bool,
-    Sandy: PropTypes.string, //.bool,
-    Troutdale: PropTypes.string, //.bool,
-    Tualatin: PropTypes.string, //.bool,
-    Vancouver: PropTypes.string, //.bool,
+  location: PropTypes.arrayOf(PropTypes.shape({
+    Beaverton: PropTypes.string,
+    Clackamas: PropTypes.string,
+    Gresham: PropTypes.string,
+    HappyValley: PropTypes.string,
+    LakeOswego: PropTypes.string,
+    Milwaukie: PropTypes.string,
+    Downtown: PropTypes.string,
+    North: PropTypes.string,
+    NECloseIn: PropTypes.string,
+    NorthEast: PropTypes.string,
+    NorthWest: PropTypes.string,
+    SECloseIn: PropTypes.string,
+    SouthEast: PropTypes.string,
+    SouthWest: PropTypes.string,
+    Sandy: PropTypes.string,
+    Troutdale: PropTypes.string,
+    Tualatin: PropTypes.string,
+    Vancouver: PropTypes.string,
   })).isRequired,
   streetAddr: PropTypes.string.isRequired,
   contactName: PropTypes.string.isRequired,
@@ -149,12 +134,13 @@ TaskForm.propTypes = {
     name: PropTypes.string,
     email: PropTypes.string
   }),
-  submitText: PropTypes.string
+  submitText: PropTypes.string,
+  legend: PropTypes.string
 };
 
 TaskForm.defaultProps = {
-  submitText: 'Submit'
+  submitText: 'Submit',
+  legend: ''
 };
 
 export default TaskForm;
-

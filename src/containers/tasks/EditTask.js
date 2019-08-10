@@ -18,25 +18,25 @@ class EditTask extends PureComponent {
       Caregiving: PropTypes.string,
       Event: PropTypes.string,
     })).isRequired,
-    location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-      Beaverton: PropTypes.string, //.bool,
-      Clackamas: PropTypes.string, //.bool,
-      Gresham: PropTypes.string, //.bool,
-      HappyValley: PropTypes.string, //.bool,
-      LakeOswego: PropTypes.string, //.bool,
-      Milwaukie: PropTypes.string, //.bool,
-      Downtown: PropTypes.string, //.bool,
-      North: PropTypes.string, //.bool,
-      NECloseIn: PropTypes.string, //.bool,
-      NorthEast: PropTypes.string, //.bool,
-      NorthWest: PropTypes.string, //.bool,
-      SECloseIn: PropTypes.string, //.bool,
-      SouthEast: PropTypes.string, //.bool,
-      SouthWest: PropTypes.string, //.bool,
-      Sandy: PropTypes.string, //.bool,
-      Troutdale: PropTypes.string, //.bool,
-      Tualatin: PropTypes.string, //.bool,
-      Vancouver: PropTypes.string, //.bool,
+    location: PropTypes.arrayOf(PropTypes.shape({
+      Beaverton: PropTypes.string,
+      Clackamas: PropTypes.string,
+      Gresham: PropTypes.string,
+      HappyValley: PropTypes.string,
+      LakeOswego: PropTypes.string,
+      Milwaukie: PropTypes.string,
+      Downtown: PropTypes.string,
+      North: PropTypes.string,
+      NECloseIn: PropTypes.string,
+      NorthEast: PropTypes.string,
+      NorthWest: PropTypes.string,
+      SECloseIn: PropTypes.string,
+      SouthEast: PropTypes.string,
+      SouthWest: PropTypes.string,
+      Sandy: PropTypes.string,
+      Troutdale: PropTypes.string,
+      Tualatin: PropTypes.string,
+      Vancouver: PropTypes.string,
     })).isRequired,
     streetAddr: PropTypes.string.isRequired,
     contactName: PropTypes.string.isRequired,
@@ -59,14 +59,17 @@ class EditTask extends PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ title: this.props.title, taskType: this.props.taskType, contactName: this.props.contactName, contactPhone: this.props.contactPhone, contactEmail: this.props.contactEmail, location: this.props.location, streetAddr: this.props.streetAddr, description: this.props.description });
+    this.setState({ title: this.props.title, taskType: this.props.taskType, contactName: this.props.contactName, 
+      contactPhone: this.props.contactPhone, contactEmail: this.props.contactEmail, location: this.props.location, 
+      streetAddr: this.props.streetAddr, description: this.props.description });
   }
 
   handleSubmit = event => {
     event.preventDefault();
     const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state;
     this.props.editTask({ title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description });
-    this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', description: '' });
+    this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', 
+      description: '' });
   }
 
   handleChange = ({ target }) => {
@@ -77,20 +80,20 @@ class EditTask extends PureComponent {
     const { title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description } = this.state;
     return (
       <>
-      <p></p>
-      <TaskForm
-        onSubmit={this.handleSubmit}
-        onChange={this.handleChange}
-        title={title}
-        taskType={taskType}
-        location={location}
-        contactName={contactName}
-        contactPhone={contactPhone}
-        contactEmail={contactEmail}
-        streetAddr={streetAddr}
-        description={description}
-        submitText="Edit Task"
-      />
+        <TaskForm
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          title={title}
+          taskType={taskType}
+          location={location}
+          contactName={contactName}
+          contactPhone={contactPhone}
+          contactEmail={contactEmail}
+          streetAddr={streetAddr}
+          description={description}
+          submitText="Edit Task"
+          legend="Edit or Update Your Listing"
+        />
       </>
     );
   }
@@ -118,5 +121,3 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(EditTask));
-
-

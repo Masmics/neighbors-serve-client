@@ -10,7 +10,6 @@ import Callback from '../containers/auth/Callback';
 import { withSession } from '../containers/auth/withSession';
 import TaskById from '../containers/tasks/TaskById';
 import CreateTask from '../containers/tasks/CreateTask';
-import EditTask from '../containers/tasks/EditTask';
 import Header from './Header';
 import Footer from './Footer';
 import '../css/styles.css';
@@ -26,7 +25,6 @@ export default function App() {
         <Route exact path="/create" component={withSession(CreateTask)} />
         <Route path="/callback" component={Callback} />
         <Route path="/:id" component={withSession(TaskById)} />
-        <Route path="/update" component={withSession(EditTask)} />
       </Switch>
       <Footer />
     </Router>

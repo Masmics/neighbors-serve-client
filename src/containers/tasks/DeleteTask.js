@@ -17,7 +17,6 @@ class DeleteTask extends PureComponent {
   }
 
   handleSubmit = () => {
-    // event.preventDefault();
     const { task } = this.state;
     this.props.removeTask({ task });
     this.setState({ task: '' });

@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import CreateTask from '../containers/tasks/CreateTask';
 import AllTasks from '../containers/tasks/AllTasks';
-// import Header from './Header';
-// import styles from '../css/styles.css';
 import homestyles from '../css/Home.css';
 
 const button = {
@@ -20,17 +17,17 @@ export default function Home() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingRight: '4%' }}>
 
         <div>
-          <Link to="/new" >
+          <Link to="/create" >
             <button type="button" style={button}><b>Create a New Listing</b></button>
           </Link>
         </div>
 
         <div>
-          <button type="button" style={button}><b>Filter by Type</b></button>
+          <button type="button" style={button}><b>TBA: Filter by Type</b></button>
         </div>
 
         <div>
-          <button type="button" style={button}><b>Filter by Location</b></button>
+          <button type="button" style={button}><b>TBA: Filter by Location</b></button>
         </div>
       </div>
 
@@ -40,9 +37,7 @@ export default function Home() {
         <AllTasks />
       </div>
 
-
     </main>
   </>
   );
 }
-

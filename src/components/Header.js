@@ -11,6 +11,7 @@ const Header = () => (
     <header style={{ height: '122px', width: '100%', color: '#bbff00', 
       backgroundColor: 'black', display: 'flex', justifyContent: 'space-between',
       alignItems: 'center' }}>
+        
       <div>
         <Link to="/home" >
           <button type="button" style={button}>
@@ -41,8 +42,3 @@ const Header = () => (
 );
 
 export default Header;
-
-// , flexDirection: 'column', justifyContent: 'center'
-// left button:  style={{ textAlign: 'left', verticalAlign: 'middle' }}
-// middle:  style={{ textAlign: 'center' }}
-// 

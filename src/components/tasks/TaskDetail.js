@@ -2,17 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DeleteTask from '../../containers/tasks/DeleteTask';
+import EditTask from '../../containers/tasks/EditTask';
 import styles from '../../css/Home.css';
 
 const homeButton = {
   borderRadius: '28px', color: '3114cc', backgroundColor: '#E4FFBF',
   width: '80px', boxShadow: '4px 4px 4px 4px', margin: '3px', 
   marginTop: '5px', textAlign: 'center'
-};
-
-const editButton = {
-  borderRadius: '28px', color: '3114cc', backgroundColor: '#E4FFBF',
-  width: '80px', boxShadow: '4px 4px 4px 4px', textAlign: 'center'
 };
 
 function TaskDetail({ task, owned }) {
@@ -37,18 +33,15 @@ function TaskDetail({ task, owned }) {
             <button type="button" style={homeButton}><b>Home</b></button>
           </Link>
         </div>
+        
         <div styles={styles}>
-
-          <div>
-            <h2>Task Detail</h2>
-          </div>
+          <h2>Task Detail</h2>
 
           <div>
             <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', 
               paddingBottom: '25px', backgroundColor: '#C7C6B0' }}>
               <legend style={{ border: '1px solid', backgroundColor: 'white', padding: '2px' }}><b>  {title}  </b></legend>
               <p><b>Posted by: </b>{contactName}, at {author.email}</p>
-              {/* <p>{formattedDate}</p> */}
               <p><b>Date: </b>{date}</p>
               <p><b>Task Type: </b>{taskType}</p>
               <p><b>Description: </b>{description}</p>
@@ -79,7 +72,6 @@ function TaskDetail({ task, owned }) {
             paddingBottom: '25px', backgroundColor: '#C7C6B0' }}>
             <legend style={{ border: '1px solid', backgroundColor: 'white', padding: '2px' }}><b>  {title}  </b></legend>
             <p><b>Posted by: </b>{contactName}, at {author.email}</p>
-            {/* <p>{formattedDate}</p> */}
             <p><b>Date: </b>{date}</p>
             <p><b>Task Type: </b>{taskType}</p>
             <p><b>Description: </b>{description}</p>
@@ -95,10 +87,14 @@ function TaskDetail({ task, owned }) {
             <DeleteTask />
           </div>
           <div>
-            <Link to={'/update'}>
-              <button type="button" style={editButton}><b>Edit Task</b></button>
+            <Link to={'/home'}>
+              <button type="button" style={homeButton}><b>Home</b></button>
             </Link>
           </div>
+        </div>
+        
+        <div>
+          <EditTask />
         </div>
     </>
     );
@@ -110,34 +106,34 @@ TaskDetail.propTypes = {
   task: PropTypes.shape({
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-      Labor: PropTypes.string, //.bool,
-      Trades: PropTypes.string, //.bool,
-      Clerical: PropTypes.string, //.bool,
-      Technical: PropTypes.string, //.bool,
-      Teaching: PropTypes.string, //.bool,
-      Caregiving: PropTypes.string, //.bool,
-      Event: PropTypes.string, //.bool
+    taskType: PropTypes.arrayOf(PropTypes.shape({
+      Labor: PropTypes.string,
+      Trades: PropTypes.string,
+      Clerical: PropTypes.string,
+      Technical: PropTypes.string,
+      Teaching: PropTypes.string,
+      Caregiving: PropTypes.string,
+      Event: PropTypes.string,
     })).isRequired,
-    location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-      Beaverton: PropTypes.string, //.bool,
-      Clackamas: PropTypes.string, //.bool,
-      Gresham: PropTypes.string, //.bool,
-      HappyValley: PropTypes.string, //.bool,
-      LakeOswego: PropTypes.string, //.bool,
-      Milwaukie: PropTypes.string, //.bool,
-      Downtown: PropTypes.string, //.bool,
-      North: PropTypes.string, //.bool,
-      NECloseIn: PropTypes.string, //.bool,
-      NorthEast: PropTypes.string, //.bool,
-      NorthWest: PropTypes.string, //.bool,
-      SECloseIn: PropTypes.string, //.bool,
-      SouthEast: PropTypes.string, //.bool,
-      SouthWest: PropTypes.string, //.bool,
-      Sandy: PropTypes.string, //.bool,
-      Troutdale: PropTypes.string, //.bool,
-      Tualatin: PropTypes.string, //.bool,
-      Vancouver: PropTypes.string, //.bool,
+    location: PropTypes.arrayOf(PropTypes.shape({
+      Beaverton: PropTypes.string,
+      Clackamas: PropTypes.string,
+      Gresham: PropTypes.string,
+      HappyValley: PropTypes.string,
+      LakeOswego: PropTypes.string,
+      Milwaukie: PropTypes.string,
+      Downtown: PropTypes.string,
+      North: PropTypes.string,
+      NECloseIn: PropTypes.string,
+      NorthEast: PropTypes.string,
+      NorthWest: PropTypes.string,
+      SECloseIn: PropTypes.string,
+      SouthEast: PropTypes.string,
+      SouthWest: PropTypes.string,
+      Sandy: PropTypes.string,
+      Troutdale: PropTypes.string,
+      Tualatin: PropTypes.string,
+      Vancouver: PropTypes.string,
     })).isRequired,
     streetAddr: PropTypes.string.isRequired,
     contactName: PropTypes.string.isRequired,
@@ -152,4 +148,3 @@ TaskDetail.propTypes = {
 };
 
 export default TaskDetail;
-

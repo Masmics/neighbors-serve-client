@@ -8,6 +8,7 @@ class CreateTask extends PureComponent {
   static propTypes = {
     createTask: PropTypes.func.isRequired
   }
+  
   state = {
     title: '',
     taskType: '',
@@ -48,6 +49,7 @@ class CreateTask extends PureComponent {
           streetAddr={streetAddr}
           description={description}
           submitText="Create Task"
+          legend="Create a new request or notice"
         />
       </>
     );

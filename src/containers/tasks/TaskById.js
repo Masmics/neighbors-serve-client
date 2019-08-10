@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import TaskDetail from '../../components/tasks/TaskDetail';
 import { fetchTaskDetail } from '../../actions/taskDetailActions';
 import { getTaskDetail, getTaskDetailLoading, getTaskDetailOwnedBySession } from '../../selectors/taskDetailSelector';
-import { getSessionId } from '../../selectors/sessionSelector';
 
 // create wrapper
 class TaskById extends PureComponent {
@@ -13,34 +12,34 @@ class TaskById extends PureComponent {
     task: PropTypes.shape({
       date: PropTypes.string,
       title: PropTypes.string,
-      taskType: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-        Labor: PropTypes.string, //.bool,
-        Trades: PropTypes.string, //.bool,
-        Clerical: PropTypes.string, //.bool,
-        Technical: PropTypes.string, //.bool,
-        Teaching: PropTypes.string, //.bool,
-        Caregiving: PropTypes.string, //.bool,
-        Event: PropTypes.string, //.bool
+      taskType: PropTypes.arrayOf(PropTypes.shape({
+        Labor: PropTypes.string,
+        Trades: PropTypes.string,
+        Clerical: PropTypes.string,
+        Technical: PropTypes.string,
+        Teaching: PropTypes.string,
+        Caregiving: PropTypes.string,
+        Event: PropTypes.string,
       })).isRequired,
-      location: PropTypes.arrayOf(PropTypes.shape({ // was shape({
-        Beaverton: PropTypes.string, //.bool,
-        Clackamas: PropTypes.string, //.bool,
-        Gresham: PropTypes.string, //.bool,
-        HappyValley: PropTypes.string, //.bool,
-        LakeOswego: PropTypes.string, //.bool,
-        Milwaukie: PropTypes.string, //.bool,
-        Downtown: PropTypes.string, //.bool,
-        North: PropTypes.string, //.bool,
-        NECloseIn: PropTypes.string, //.bool,
-        NorthEast: PropTypes.string, //.bool,
-        NorthWest: PropTypes.string, //.bool,
-        SECloseIn: PropTypes.string, //.bool,
-        SouthEast: PropTypes.string, //.bool,
-        SouthWest: PropTypes.string, //.bool,
-        Sandy: PropTypes.string, //.bool,
-        Troutdale: PropTypes.string, //.bool,
-        Tualatin: PropTypes.string, //.bool,
-        Vancouver: PropTypes.string, //.bool,
+      location: PropTypes.arrayOf(PropTypes.shape({
+        Beaverton: PropTypes.string,
+        Clackamas: PropTypes.string,
+        Gresham: PropTypes.string,
+        HappyValley: PropTypes.string,
+        LakeOswego: PropTypes.string,
+        Milwaukie: PropTypes.string,
+        Downtown: PropTypes.string,
+        North: PropTypes.string,
+        NECloseIn: PropTypes.string,
+        NorthEast: PropTypes.string,
+        NorthWest: PropTypes.string,
+        SECloseIn: PropTypes.string,
+        SouthEast: PropTypes.string,
+        SouthWest: PropTypes.string,
+        Sandy: PropTypes.string,
+        Troutdale: PropTypes.string,
+        Tualatin: PropTypes.string,
+        Vancouver: PropTypes.string,
       })).isRequired,
       streetAddr: PropTypes.string,
       contactName: PropTypes.string,
