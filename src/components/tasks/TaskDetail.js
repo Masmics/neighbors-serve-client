@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DeleteTask from '../../containers/tasks/DeleteTask';
 import EditTask from '../../containers/tasks/EditTask';
-import styles from '../../css/Home.css';
 
 const homeButton = {
   borderRadius: '28px', color: '3114cc', backgroundColor: '#E4FFBF',
