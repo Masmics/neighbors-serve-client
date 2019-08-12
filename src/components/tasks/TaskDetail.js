@@ -33,8 +33,10 @@ function TaskDetail({ task, owned }) {
           </Link>
         </div>
         
-        <div styles={styles}>
-          <h2>Task Detail</h2>
+        <div>
+          <div style={{ textAlign: 'center' }}>
+            <h2>Task Detail</h2>
+          </div>
 
           <div>
             <fieldset style={{ marginLeft: '8px', marginRight: '8px', marginBottom: '15px', 
@@ -62,7 +64,7 @@ function TaskDetail({ task, owned }) {
           </Link>
         </div>
 
-        <div>
+        <div style={{ textAlign: 'center' }}>
           <h2>Task Detail</h2>
         </div>
 

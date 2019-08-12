@@ -9,7 +9,7 @@ const button = {
 function TaskDeleter({ onSubmit, submitText }) {
   return (
     <form onSubmit={onSubmit}>
-      <button type="button" style={button}><b>{submitText}</b></button>
+      <button style={button}><b>{submitText}</b></button>
     </form>
   );
 }

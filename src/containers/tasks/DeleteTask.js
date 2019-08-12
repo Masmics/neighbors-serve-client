@@ -25,7 +25,6 @@ class DeleteTask extends PureComponent {
   handleClick = () => {
     return (
       <>
-        <h2>Task Successfully Deleted</h2>
         <Redirect to={'/home'} />
       </>
     );
@@ -56,3 +55,5 @@ export default withRouter(connect(
   null,
   mapDispatchToProps
 )(DeleteTask));
+
+// <h2>Task Successfully Deleted</h2>

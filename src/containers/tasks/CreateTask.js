@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 import TaskForm from '../../components/tasks/TaskForm';
 import { newTask } from '../../actions/taskActions';
 
@@ -26,6 +27,14 @@ class CreateTask extends PureComponent {
     this.props.createTask({ title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description });
     // clears form after submission
     this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', description: '' });
+  }
+
+  handleClick = () => {
+    return (
+      <>
+        <Redirect to={'/home'} />
+      </>
+    );
   }
 
   // set the name to this value
