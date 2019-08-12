@@ -27,15 +27,20 @@ class CreateTask extends PureComponent {
     this.props.createTask({ title, taskType, location, streetAddr, contactName, contactPhone, contactEmail, description });
     // clears form after submission
     this.setState({ title: '', taskType: '', location: '', streetAddr: '', contactName: '', contactPhone: '', contactEmail: '', description: '' });
-  }
-
-  handleClick = () => {
     return (
       <>
         <Redirect to={'/home'} />
       </>
     );
   }
+
+  // handleClick = () => {
+  //   return (
+  //     <>
+  //       <Redirect to={'/home'} />
+  //     </>
+  //   );
+  // }
 
   // set the name to this value
   handleChange = ({ target }) => {
