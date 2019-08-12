@@ -6,7 +6,6 @@ import TaskDetail from '../../components/tasks/TaskDetail';
 import { fetchTaskDetail } from '../../actions/taskDetailActions';
 import { getTaskDetail, getTaskDetailLoading, getTaskDetailOwnedBySession } from '../../selectors/taskDetailSelector';
 
-// create wrapper
 class TaskById extends PureComponent {
   static propTypes = {
     task: PropTypes.shape({

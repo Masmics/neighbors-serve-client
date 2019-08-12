@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const homeButton = {
   borderRadius: '28px', color: '3114cc', backgroundColor: '#E4FFBF',
   width: '80px', boxShadow: '4px 4px 4px 4px', margin: '3px', 
-  marginTop: '5px' // , textAlign: 'center'
+  marginTop: '5px'
 };
 
 function TaskForm({ onSubmit, onChange, title, taskType, contactName, contactPhone, contactEmail, location, streetAddr, description, submitText, legend }) {  
